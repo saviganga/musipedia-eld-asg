@@ -45,7 +45,7 @@ resource "aws_security_group" "elb_sg" {
 # provision security groups
 resource "aws_security_group" "app_sg" {
   name        = "app-sg"
-  description = "Allow TLS inbound traffic from the internet"
+  description = "Allow TLS inbound traffic from the elb security group"
 
   ingress {
     from_port       = 0

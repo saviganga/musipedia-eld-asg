@@ -1,5 +1,5 @@
 # find a way to pass the ip address from the created terraform instance
-web ansible_host=35.172.133.254
+web ansible_host=54.145.171.253
 
 [servers]
 web

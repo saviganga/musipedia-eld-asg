@@ -1,6 +1,7 @@
 ---
+- hosts: aws_ec2
 - name: Install Node.js and npm
-  hosts: servers
+  hosts: aws_ec2
   become: true
 
   tasks:

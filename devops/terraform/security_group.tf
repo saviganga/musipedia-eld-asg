@@ -46,7 +46,7 @@ resource "aws_security_group" "app_sg" {
     security_groups = [aws_security_group.elb_sg.id]
   }
 
-#   ssh rule for ansible
+  #   ssh rule for ansible
   ingress {
     from_port   = 22
     to_port     = 22

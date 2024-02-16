@@ -1,6 +1,7 @@
 ---
+- hosts: aws_ec2
 - name: Start the application
-  hosts: servers
+  hosts: aws_ec2
   become: true
 
   tasks:

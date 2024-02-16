@@ -36,16 +36,16 @@ resource "aws_lb_target_group" "musipedia-tg" {
   health_check {
     path     = "/artists"
     protocol = "HTTP"
-    port = 3000
+    port     = 3000
   }
 }
 
-# create an attachment for the target group - connects the ec2 instance to the target group
-resource "aws_lb_target_group_attachment" "musipedia-tg-attachment" {
-  target_group_arn = aws_lb_target_group.musipedia-tg.arn
-  target_id        = aws_instance.musipedia-instance.id
-  port             = 3000
-}
+# # create an attachment for the target group - connects the ec2 instance to the target group
+# resource "aws_lb_target_group_attachment" "musipedia-tg-attachment" {
+#   target_group_arn = aws_lb_target_group.musipedia-tg.arn
+#   target_id        = aws_instance.musipedia-instance.id
+#   port             = 3000
+# }
 
 
 # Create an ALB listener to handle load balancer redirect - check what the module 'listener_rules' does
@@ -61,9 +61,9 @@ resource "aws_lb_listener" "musipedia-listener" {
 }
 
 
-output "vpcs" {
-  value = data.aws_vpcs.current_vpcs
-}
+# output "vpcs" {
+#   value = data.aws_vpcs.current_vpcs
+# }
 
 output "subnets" {
   value = data.aws_subnets.available_subnets
@@ -71,5 +71,10 @@ output "subnets" {
 
 output "elb-dns" {
   value = aws_lb.musipedia-lb.dns_name
+}
+
+
+output "elb-arn" {
+  value = aws_lb.musipedia-lb.arn
 }
 

@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Image
         id: build
-        run: packer build ./devops/packer/
+        run: packer build -var-file="variable.json" packer.json
 
   provision-terraform:
     runs-on: ubuntu-latest

@@ -36,15 +36,15 @@ jobs:
 
       - name: Validate Packer
         id: validate
-        env:
-          access_key: ${{ secrets.AWS_ACCESS_KEY }}
-          secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          region: ${{ secrets.REGION }}
-          source_ami: ${{ secrets.SOURCE_AMI }}
-          instance_type: ${{ secrets.INSTANCE_TYPE }}
-          ssh_user: ${{ secrets.SSH_USER }}
-          project_name: ${{ secrets.PROJECT_NAME }}
-        run: packer validate ./devops/packer/
+        run: |
+          access_key=$ACCESS_KEY \
+          secret_key=$SECRET_KEY \
+          region=$REGION \
+          source_ami=$SOURCE_AMI \
+          instance_type=$INSTANCE_TYPE \
+          ssh_user=$SSH_USER \
+          project_name=$PROJECT_NAME \
+          packer validate ./devops/packer/
 
       - name: Build Image
         id: build

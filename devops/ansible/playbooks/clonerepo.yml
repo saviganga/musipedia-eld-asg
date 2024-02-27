@@ -7,7 +7,7 @@
   tasks:
     - name: Ensure the remote directory exists
       file:
-        path: "{{ remote_key_path }}"
+        path: "{{ remote_env_path }}"
         state: directory
 
     - name: Download the latest version of app from S3 bucket

@@ -1,4 +1,15 @@
 
+
+packer {
+  required_plugins {
+    amazon = {
+      version = ">= 0.0.2"
+      source  = "github.com/hashicorp/amazon"
+    }
+  }
+}
+
+
 source "amazon-ebs" "example" {
   access_key    = var.access_key
   secret_key    = var.secret_key

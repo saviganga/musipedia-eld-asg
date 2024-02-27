@@ -29,9 +29,9 @@
         aws_access_key: "{{ access_key }}" 
         aws_secret_key: "{{ secret_key }}"
         bucket: musipedia-secretes
-        object: id_ansible
+        object: "{{ private_key }}"
         mode: get
-        dest: /home/ubuntu/app/pub-keys/id_ansible
+        dest: "{{ remote_key_path }}/{{ private_key }}"
     
     # - name: Synchronize file from S3 bucket
     #   community.aws.s3_sync:
@@ -48,8 +48,8 @@
     #     src: "{{ local_key_file_path }}"
     #     dest: "{{ remote_key_path }}"
 
-    # - name: Modify private key permission
-    #   command: "chmod 400 {{ remote_key_path }}/{{ private_key }}"
+    - name: Modify private key permission
+      command: "chmod 400 {{ remote_key_path }}/{{ private_key }}"
 
 
 
@@ -69,7 +69,7 @@
         dest: "{{ target_directory }}"
         version: "main"
         accept_hostkey: yes
-        key_file: /home/ubuntu/app/pub-keys/id_ansible
+        key_file: "{{ remote_key_path }}/{{ private_key }}"
         # private_key: "{{ private_key_str }}"
         # ssh_opts: "-o ForwardAgent=yes -i /path/to/local/ssh/key"
 

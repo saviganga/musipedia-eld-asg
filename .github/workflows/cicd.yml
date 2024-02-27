@@ -7,35 +7,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  # provision-packer:
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
-  #     AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - name: Set up Packer
-  #       id: setup
-  #       uses: hashicorp/setup-packer@main
-
-  #     - name: Initialize Packer
-  #       id: initpacker
-  #       run: packer init ./devops/packer/
-
-  #     - name: Format Packer
-  #       id: fmtpacker
-  #       run: packer fmt ./devops/packer/
-
-  #     - name: Validate Packer
-  #       id: validate
-  #       run: packer validate ./devops/packer/
-
-  #     - name: Build Image
-  #       id: build
-  #       run: packer build ./devops/packer/
 
   provision-terraform:
     runs-on: ubuntu-latest

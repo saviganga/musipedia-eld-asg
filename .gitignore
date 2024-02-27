@@ -11,6 +11,7 @@ uploads/
 ####################
 # packer
 *variable.json
+*variable.pkr.json
 # Cache objects
 packer_cache/
 

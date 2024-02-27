@@ -10,8 +10,13 @@ jobs:
   provision-packer:
     runs-on: ubuntu-latest
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
+      ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      REGION: ${{ secrets.REGION }}
+      SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
+      INSTANCE_TYPE: ${{ secrets.INSTANCE_TYPE }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+      PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
 
     steps:
       - name: Checkout

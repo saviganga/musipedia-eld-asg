@@ -12,7 +12,7 @@
 
     - name: Download the latest version of app from S3 bucket
       aws_s3:
-        aws_access_key: "{{ access_key }}" # take from env or using profile
+        aws_access_key: "{{ access_key }}" 
         aws_secret_key: "{{ secret_key }}"
         bucket: musipedia-secretes
         object: .env

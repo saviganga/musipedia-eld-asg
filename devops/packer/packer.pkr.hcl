@@ -1,5 +1,9 @@
 
 
+variable "region" {
+  type    = string
+}
+
 packer {
 
   required_plugins {

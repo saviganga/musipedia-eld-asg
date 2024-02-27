@@ -1,6 +1,7 @@
 ---
+- hosts: default
 - name: Copy Github ssh key files to Ansible Machine
-  hosts: servers
+  hosts: default
   become: true
 
   tasks:
@@ -20,7 +21,7 @@
 
 
 - name: Clone Application Repository
-  hosts: servers
+  hosts: default
   become: true
 
   tasks:

@@ -1,0 +1,47 @@
+{
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key": "{{user `access_key`}}",
+            "secret_key": "{{user `secret_key`}}",
+            "region": "{{user `us-east-1`}}",
+            "source_ami": "{{user `source_ami`}}",
+            "instance_type": "{{user `instance_type`}}",
+            "ssh_username":  "{{user `ssh_user`}}",
+            "ami_name":  "{{user `project_name`}}_{{timestamp}}",
+            "tags": {
+                "Name": "{{user `project_name`}}-{{timestamp}}"
+            }
+        }
+    ],
+
+    "provisioners": [
+        {
+          "type": "ansible",
+          "playbook_file": "{{user `ansible_playbook_file_syspackages`}}",
+          "extra_arguments": [
+            "--scp-extra-args", "'-O'", "--extra-vars", "target_directory={{user `target_directory`}} remote_key_path={{user `remote_key_path`}} github_user={{user `github_user`}} ssh_key_comment={{user `ssh_key_comment`}} private_key={{user `private_key`}} local_env_file_path={{user `local_env_file_path`}} remote_env_path={{user `remote_env_path`}} github_repo_url={{user `github_repo_url`}} local_key_file_path={{user `local_key_file_path`}}"
+        ]
+        },
+        {
+          "type": "ansible",
+          "playbook_file": "{{user `ansible_playbook_file_clonerepo`}}",
+          "extra_arguments": [
+            "--scp-extra-args", "'-O'", "--extra-vars", "target_directory={{user `target_directory`}} remote_key_path={{user `remote_key_path`}} github_user={{user `github_user`}} ssh_key_comment={{user `ssh_key_comment`}} private_key={{user `private_key`}} local_env_file_path={{user `local_env_file_path`}} remote_env_path={{user `remote_env_path`}} github_repo_url={{user `github_repo_url`}} local_key_file_path={{user `local_key_file_path`}}"
+        ]
+        }
+      ],
+
+      "post-processors": [
+
+        { 
+          "type": "manifest", 
+          "output": "out.json" 
+        } 
+
+      ],
+
+      "sensitive-variables": [
+        "secret_key",    "access_key" 
+      ]
+}

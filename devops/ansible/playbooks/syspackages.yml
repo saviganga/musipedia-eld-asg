@@ -1,6 +1,7 @@
 ---
+- hosts: default
 - name: Install Node.js and npm
-  hosts: servers
+  hosts: default
   become: true
 
   tasks:

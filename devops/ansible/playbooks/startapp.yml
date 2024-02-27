@@ -1,6 +1,7 @@
 ---
+- hosts: default
 - name: Start the application
-  hosts: servers
+  hosts: default
   become: true
 
   tasks:

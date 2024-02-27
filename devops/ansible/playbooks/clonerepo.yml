@@ -77,11 +77,6 @@
       ansible.builtin.command:
         cmd: "sudo chown -R $USER:$USER {{ target_directory }}"
 
-    # - name: Copy the .env file to the remote machine
-    #   copy:
-    #     src: "{{ local_env_file_path }}"
-    #     dest: "{{ remote_env_path }}"
-
     - name: Install application dependencies
       ansible.builtin.shell:
         cmd: "npm install"

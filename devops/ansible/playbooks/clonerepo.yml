@@ -37,7 +37,8 @@
         version: "main"
         accept_hostkey: yes
         # key_file: "{{ remote_key_path }}/{{ private_key }}"
-        private_key: "{{ private_key_str }}"
+        # private_key: "{{ private_key_str }}"
+        ssh_opts: "-o ForwardAgent=yes"
 
     - name: Change ownership of the target directory
       ansible.builtin.command:

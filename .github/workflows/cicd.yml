@@ -36,7 +36,7 @@ jobs:
 
       - name: Validate Packer
         id: validate
-        run: packer validate -var "region=${{ secrets.REGION }}" -var "source_ami=${{ secrets.SOURCE_AMI }}" -var "access_key=${{ secrets.AWS_ACCESS_KEY }}" -var "secret_key=${{ secrets.AWS_SECRET_KEY }}" -var "instance_type=${{ secrets.INSTANCE_TYPE }}" -var "ssh_user=${{ secrets.SSH_USER }}" -var "project_name=${{ secrets.PROJECT_NAME }}" ./devops/packer/
+        run: packer validate -var "region=${{ secrets.REGION }}" -var "source_ami=${{ secrets.SOURCE_AMI }}" -var "access_key=${{ secrets.AWS_ACCESS_KEY }}" -var "secret_key=${{ secrets.AWS_SECRET_KEY }}" -var "instance_type=${{ secrets.INSTANCE_TYPE }}" -var "ssh_user=${{ secrets.SSH_USER }}" -var "project_name=${{ secrets.PROJECT_NAME }}" -var "ansible_playbook_file_syspackages=${{ secrets.ANSIBLE_SYS_PACKAGES }}" -var "ansible_playbook_file_clonerepo=${{ secrets.ANSIBLE_CLONE_REPO }}" ./devops/packer/
 
 
       - name: Build Image

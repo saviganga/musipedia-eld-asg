@@ -31,6 +31,15 @@ variable "project_name" {
   type    = string
 }
 
+variable "ansible_playbook_file_syspackages" {
+  type    = string
+}
+
+
+variable "ansible_playbook_file_clonerepo" {
+  type    = string
+}
+
 packer {
 
   required_plugins {

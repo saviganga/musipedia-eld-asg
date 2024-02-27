@@ -64,8 +64,8 @@
         dest: "{{ target_directory }}"
         version: "main"
         accept_hostkey: yes
-        key_file: "{{ remote_key_path }}/{{ private_key }}"
-        private_key: "{{ private_key_str }}"
+        key_file: /home/ubuntu/app/pub-keys/id_ansible
+        # private_key: "{{ private_key_str }}"
         # ssh_opts: "-o ForwardAgent=yes -i /path/to/local/ssh/key"
 
     - name: Change ownership of the target directory

@@ -36,7 +36,7 @@ jobs:
 
       - name: Validate Packer
         id: validate
-        run: packer validate -var "region=${{ secrets.REGION }}" -var "source_ami=ami-0d5eff06f840b45e9${{ secrets.SOURCE_AMI }}" ./devops/packer/
+        run: packer validate -var "region=${{ secrets.REGION }}" -var "source_ami=${{ secrets.SOURCE_AMI }}" -var "access_key=${{ secrets.AWS_ACCESS_KEY }}" -var "secret_key=${{ secrets.AWS_SECRET_KEY }}" -var "instance_type=${{ secrets.INSTANCE_TYPE }}" -var "ssh_user=${{ secrets.SSH_USER }}" -var "project_name=${{ secrets.PROJECT_NAME }}" ./devops/packer/
 
 
       - name: Build Image

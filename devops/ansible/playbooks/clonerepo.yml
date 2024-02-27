@@ -7,17 +7,17 @@
   tasks:
     - name: Ensure the remote directory exists
       file:
-        path: "{{ remote_env_path }}"
+        path: "{{ target_directory }}"
         state: directory
 
-    - name: Download the env file from s3 bucket
-      aws_s3:
-        aws_access_key: "{{ access_key }}" 
-        aws_secret_key: "{{ secret_key }}"
-        bucket: musipedia-secretes
-        object: "{{remote_env_file}}"
-        mode: get
-        dest: "{{remote_env_path}}/{{remote_env_file}}"
+    # - name: Download the env file from s3 bucket
+    #   aws_s3:
+    #     aws_access_key: "{{ access_key }}" 
+    #     aws_secret_key: "{{ secret_key }}"
+    #     bucket: musipedia-secretes
+    #     object: "{{remote_env_file}}"
+    #     mode: get
+    #     dest: "{{target_directory}}/{{remote_env_file}}"
 
     - name: Ensure the remote directory exists
       file:
@@ -72,6 +72,15 @@
         key_file: "{{ remote_key_path }}/{{ private_key }}"
         # private_key: "{{ private_key_str }}"
         # ssh_opts: "-o ForwardAgent=yes -i /path/to/local/ssh/key"
+
+    - name: Download the env file from s3 bucket
+      aws_s3:
+        aws_access_key: "{{ access_key }}" 
+        aws_secret_key: "{{ secret_key }}"
+        bucket: musipedia-secretes
+        object: "{{remote_env_file}}"
+        mode: get
+        dest: "{{target_directory}}/{{remote_env_file}}"
 
     - name: Change ownership of the target directory
       ansible.builtin.command:

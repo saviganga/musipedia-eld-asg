@@ -2,6 +2,13 @@
 
 packer {
 
+  "variables" : {
+        "region" : "us-east-1",
+        "aws_access_key_id": "{{ env `AWS_ACCESS_KEY_ID` }}",
+        "aws_secret_access_key": "{{ env `AWS_SECRET_ACCESS_KEY` }}",
+        "source_ami" : "ami-0d5eff06f840b45e9" 
+    },
+
   required_plugins {
     amazon = {
       version = ">= 0.0.2"

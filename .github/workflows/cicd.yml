@@ -36,15 +36,8 @@ jobs:
 
       - name: Validate Packer
         id: validate
-        run: |
-          "access_key=$AWS_ACCESS_KEY" \
-          "secret_key=$AWS_SECRET_KEY" \
-          "region=$REGION" \
-          "source_ami=$SOURCE_AMI" \
-          "instance_type=$INSTANCE_TYPE" \
-          "ssh_user=$SSH_USER" \
-          "project_name=$PROJECT_NAME" \
-          packer validate ./devops/packer/
+        run: packer validate -var "region=${{ secrets.REGION }}" -var "source_ami=ami-0d5eff06f840b45e9" your_packer_template.pkr.hcl
+
 
       - name: Build Image
         id: build

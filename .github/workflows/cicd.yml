@@ -21,17 +21,17 @@ jobs:
         id: setup
         uses: hashicorp/setup-packer@main
 
-      - name: Initialize Packer
-        id: initpacker
-        run: packer init ./devops/packer/
+      # - name: Initialize Packer
+      #   id: initpacker
+      #   run: packer init ./devops/packer/
 
-      - name: Format Packer
-        id: fmtpacker
-        run: packer fmt ./devops/packer/
+      # - name: Format Packer
+      #   id: fmtpacker
+      #   run: packer fmt ./devops/packer/
 
-      - name: Validate Packer
-        id: validate
-        run: packer validate ./devops/packer/
+      # - name: Validate Packer
+      #   id: validate
+      #   run: packer validate ./devops/packer/
 
       - name: Build Image
         id: build

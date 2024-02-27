@@ -20,6 +20,9 @@
         name: npm
         state: present
 
+    - name: Install Python
+      ansible.builtin.raw: yum install -y python3
+
     - name: Install pip
       ansible.builtin.package:
         name: python3-pip

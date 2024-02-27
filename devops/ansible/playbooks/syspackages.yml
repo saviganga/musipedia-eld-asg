@@ -21,7 +21,9 @@
         state: present
 
     - name: Install Python
-      ansible.builtin.raw: yum install -y python3
+      ansible.builtin.package:
+        name: python3
+        state: present
 
     - name: Install pip
       ansible.builtin.package:

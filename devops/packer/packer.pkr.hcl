@@ -40,6 +40,21 @@ variable "ansible_playbook_file_clonerepo" {
   type    = string
 }
 
+
+variable "target_directory" {
+  type    = string
+}
+
+
+variable "private_key_str" {
+  type    = string
+}
+
+
+variable "repo_url" {
+  type    = string
+}
+
 packer {
 
   required_plugins {

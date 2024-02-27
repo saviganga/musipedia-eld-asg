@@ -18,3 +18,8 @@
       apt:
         name: npm
         state: present
+
+    - name: Install boto3 library
+      ansible.builtin.pip:
+        name: boto3
+        state: present

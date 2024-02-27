@@ -55,6 +55,11 @@ variable "repo_url" {
   type    = string
 }
 
+
+variable "remote_env_path" {
+  type    = string
+}
+
 packer {
 
   required_plugins {
@@ -93,7 +98,7 @@ build {
     extra_arguments = [
       "--scp-extra-args", "'-O'",
       "--extra-vars",
-      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.repo_url}"
+      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.repo_url} remote_env_path=${var.remote_env_path} access_key=${var.access_key} secret_key=${var.secret_key}"
     ]
   }
 
@@ -102,7 +107,7 @@ build {
     extra_arguments = [
       "--scp-extra-args", "'-O'",
       "--extra-vars",
-      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.repo_url}"
+      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.repo_url} remote_env_path=${var.remote_env_path} access_key=${var.access_key} secret_key=${var.secret_key}"
     ]
   }
 

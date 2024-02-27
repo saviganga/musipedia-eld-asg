@@ -21,9 +21,9 @@ jobs:
         id: setup
         uses: hashicorp/setup-packer@main
 
-      - name: Initialize Packer
-        id: initpacker
-        run: packer init ./devops/packer/
+      # - name: Initialize Packer
+      #   id: initpacker
+      #   run: packer init ./devops/packer/
 
       - name: Format Packer
         id: fmtpacker

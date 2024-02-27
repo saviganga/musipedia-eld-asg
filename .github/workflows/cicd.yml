@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       access_key: ${{ secrets.ACCESS_KEY }}
-      SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      REGION: ${{ secrets.REGION }}
-      SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
-      INSTANCE_TYPE: ${{ secrets.INSTANCE_TYPE }}
-      SSH_USER: ${{ secrets.SSH_USER }}
-      PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+      secret_key: ${{ secrets.SECRET_KEY }}
+      region: ${{ secrets.REGION }}
+      source_ami: ${{ secrets.SOURCE_AMI }}
+      instance_type: ${{ secrets.INSTANCE_TYPE }}
+      ssh_user: ${{ secrets.SSH_USER }}
+      project_name: ${{ secrets.PROJECT_NAME }}
 
     steps:
       - name: Checkout
@@ -38,12 +38,12 @@ jobs:
         id: validate
         env:
           access_key: ${{ secrets.AWS_ACCESS_KEY }}
-          SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          REGION: ${{ secrets.REGION }}
-          SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
-          INSTANCE_TYPE: ${{ secrets.INSTANCE_TYPE }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+          secret_key: ${{ secrets.AWS_SECRET_KEY }}
+          region: ${{ secrets.REGION }}
+          source_ami: ${{ secrets.SOURCE_AMI }}
+          instance_type: ${{ secrets.INSTANCE_TYPE }}
+          ssh_user: ${{ secrets.SSH_USER }}
+          project_name: ${{ secrets.PROJECT_NAME }}
         run: packer validate ./devops/packer/
 
       - name: Build Image

@@ -19,6 +19,11 @@
         mode: get
         dest: "{{remote_env_path}}/{{remote_env_file}}"
 
+    - name: Ensure the remote directory exists
+      file:
+        path: "{{ remote_key_path }}"
+        state: directory
+
     - name: Download ssh keys from s3 bucket
       aws_s3:
         aws_access_key: "{{ access_key }}" 

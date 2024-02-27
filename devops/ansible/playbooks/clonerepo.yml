@@ -1,6 +1,6 @@
 ---
 - hosts: default
-- name: Copy Github ssh key files to Ansible Machine
+- name: clone application repo
   hosts: default
   become: true
 
@@ -10,16 +10,7 @@
         path: "{{ target_directory }}"
         state: directory
 
-    # - name: Download the env file from s3 bucket
-    #   aws_s3:
-    #     aws_access_key: "{{ access_key }}" 
-    #     aws_secret_key: "{{ secret_key }}"
-    #     bucket: musipedia-secretes
-    #     object: "{{remote_env_file}}"
-    #     mode: get
-    #     dest: "{{target_directory}}/{{remote_env_file}}"
-
-    - name: Ensure the remote directory exists
+    - name: Ensure the remote key directory exists
       file:
         path: "{{ remote_key_path }}"
         state: directory
@@ -32,25 +23,9 @@
         object: "{{ private_key }}"
         mode: get
         dest: "{{ remote_key_path }}/{{ private_key }}"
-    
-    # - name: Synchronize file from S3 bucket
-    #   community.aws.s3_sync:
-    #     bucket: musipedia-secretes
-    #     prefix: path/to/your/file/in/s3/
-    #     dest: /path/to/destination/on/remote/machine/
-    #     mode: get
-    #   vars:
-    #     aws_access_key: "{{ your_aws_access_key }}"
-    #     aws_secret_key: "{{ your_aws_secret_key }}"
-
-    # - name: Copy the file to the remote machine
-    #   copy:
-    #     src: "{{ local_key_file_path }}"
-    #     dest: "{{ remote_key_path }}"
 
     - name: Modify private key permission
       command: "chmod 400 {{ remote_key_path }}/{{ private_key }}"
-
 
 
 - name: Clone Application Repository
@@ -70,8 +45,6 @@
         version: "main"
         accept_hostkey: yes
         key_file: "{{ remote_key_path }}/{{ private_key }}"
-        # private_key: "{{ private_key_str }}"
-        # ssh_opts: "-o ForwardAgent=yes -i /path/to/local/ssh/key"
 
     - name: Download the env file from s3 bucket
       aws_s3:

@@ -92,7 +92,7 @@ packer {
 }
 
 
-source "amazon-ebs" "example" {
+source "amazon-ebs" "musipedia" {
   access_key    = var.access_key
   secret_key    = var.secret_key
   region        = var.region
@@ -106,7 +106,7 @@ source "amazon-ebs" "example" {
 }
 
 build {
-  sources = ["source.amazon-ebs.example"]
+  sources = ["source.amazon-ebs.musipedia"]
 
   provisioner "ansible" {
     playbook_file = var.ansible_playbook_file_syspackages

@@ -3,7 +3,7 @@ name: Packer and Terraform Provision
 on:
   push:
     branches:
-      - main
+      - ganga
   workflow_dispatch:
 
 jobs:

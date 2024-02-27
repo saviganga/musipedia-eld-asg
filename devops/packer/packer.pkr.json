@@ -4,7 +4,7 @@
             "type": "amazon-ebs",
             "access_key": "{{user `access_key`}}",
             "secret_key": "{{user `secret_key`}}",
-            "region": "{{user `us-east-1`}}",
+            "region": "{{user `region`}}",
             "source_ami": "{{user `source_ami`}}",
             "instance_type": "{{user `instance_type`}}",
             "ssh_username":  "{{user `ssh_user`}}",

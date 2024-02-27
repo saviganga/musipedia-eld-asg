@@ -4,6 +4,10 @@ variable "region" {
   type    = string
 }
 
+variable "source_ami" {
+  type    = string
+}
+
 packer {
 
   required_plugins {

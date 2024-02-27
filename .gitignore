@@ -5,6 +5,8 @@ uploads/
 *scripts
 *public-keys
 *pub-keys
+*.ssh
+*.ssh.pub
 
 ####################
 # packer

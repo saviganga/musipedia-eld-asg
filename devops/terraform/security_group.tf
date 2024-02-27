@@ -1,7 +1,7 @@
 
 # provision security groups
 resource "aws_security_group" "elb_sg" {
-  name        = "elb-sg"
+  name        = "${var.PROJECT_NAME}-elb-sg"
   description = "Allow TLS inbound traffic from the internet"
 
   ingress {
@@ -30,13 +30,13 @@ resource "aws_security_group" "elb_sg" {
   }
 
   tags = {
-    Name = "elb-sg"
+    Name = "${var.PROJECT_NAME}-elb-sg"
   }
 }
 
 # provision security groups
 resource "aws_security_group" "app_sg" {
-  name        = "app-sg"
+  name        = "${var.PROJECT_NAME}-app-sg"
   description = "Allow TLS inbound traffic from the elb security group"
 
   ingress {
@@ -63,7 +63,7 @@ resource "aws_security_group" "app_sg" {
   }
 
   tags = {
-    Name = "app-sg"
+    Name = "${var.PROJECT_NAME}-app-sg"
   }
 }
 

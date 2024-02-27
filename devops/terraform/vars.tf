@@ -26,7 +26,23 @@ variable "PRIVATE_KEY" {
 variable "AMIS" {
   type = map(any)
   default = {
-    us-east-1 = "ami-0c7217cdde317cfec"
+    us-east-1 = "ami-0ae04266c242a534b"
   }
 }
+
+
+variable "PROJECT_NAME" {
+  type    = string
+  default = "musipedia"
+
+}
+
+
+variable "INSTANCE_TYPE" {
+  type    = string
+  default = "t2.micro"
+
+}
+
+
 

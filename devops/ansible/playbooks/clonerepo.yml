@@ -1,7 +1,7 @@
 ---
-- hosts: aws_ec2
+- hosts: default
 - name: Copy Github ssh key files to Ansible Machine
-  hosts: aws_ec2
+  hosts: default
   become: true
 
   tasks:
@@ -21,7 +21,7 @@
 
 
 - name: Clone Application Repository
-  hosts: aws_ec2
+  hosts: default
   become: true
 
   tasks:

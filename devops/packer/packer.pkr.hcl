@@ -78,7 +78,7 @@ build {
     extra_arguments = [
       "--scp-extra-args", "'-O'",
       "--extra-vars",
-      "target_directory=${var.target_directory} remote_key_path=${var.remote_key_path} github_user=${var.github_user} ssh_key_comment=${var.ssh_key_comment} private_key=${var.private_key} local_env_file_path=${var.local_env_file_path} remote_env_path=${var.remote_env_path} github_repo_url=${var.github_repo_url} local_key_file_path=${var.local_key_file_path}"
+      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.github_repo_url}"
     ]
   }
 
@@ -87,7 +87,7 @@ build {
     extra_arguments = [
       "--scp-extra-args", "'-O'",
       "--extra-vars",
-      "target_directory=${var.target_directory} remote_key_path=${var.remote_key_path} github_user=${var.github_user} ssh_key_comment=${var.ssh_key_comment} private_key=${var.private_key} local_env_file_path=${var.local_env_file_path} remote_env_path=${var.remote_env_path} github_repo_url=${var.github_repo_url} local_key_file_path=${var.local_key_file_path}"
+      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.github_repo_url}"
     ]
   }
 

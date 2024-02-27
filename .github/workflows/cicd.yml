@@ -10,8 +10,8 @@ jobs:
   provision-packer:
     runs-on: ubuntu-latest
     env:
-      access_key: ${{ secrets.ACCESS_KEY }}
-      secret_key: ${{ secrets.SECRET_KEY }}
+      access_key: ${{ secrets.AWS_ACCESS_KEY }}
+      secret_key: ${{ secrets.AWS_SECRET_KEY }}
       region: ${{ secrets.REGION }}
       source_ami: ${{ secrets.SOURCE_AMI }}
       instance_type: ${{ secrets.INSTANCE_TYPE }}
@@ -37,13 +37,13 @@ jobs:
       - name: Validate Packer
         id: validate
         run: |
-          access_key=$ACCESS_KEY \
-          secret_key=$SECRET_KEY \
-          region=$REGION \
-          source_ami=$SOURCE_AMI \
-          instance_type=$INSTANCE_TYPE \
-          ssh_user=$SSH_USER \
-          project_name=$PROJECT_NAME \
+          -var "access_key=$AWS_ACCESS_KEY" \
+          -var "secret_key=$AWS_SECRET_KEY" \
+          -var "region=$REGION" \
+          -var "source_ami=$SOURCE_AMI" \
+          -var "instance_type=$INSTANCE_TYPE" \
+          -var "ssh_user=$SSH_USER" \
+          -var "project_name=$PROJECT_NAME" \
           packer validate ./devops/packer/
 
       - name: Build Image

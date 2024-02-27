@@ -93,7 +93,7 @@ build {
     extra_arguments = [
       "--scp-extra-args", "'-O'",
       "--extra-vars",
-      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.github_repo_url}"
+      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.repo_url}"
     ]
   }
 
@@ -102,7 +102,7 @@ build {
     extra_arguments = [
       "--scp-extra-args", "'-O'",
       "--extra-vars",
-      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.github_repo_url}"
+      "target_directory=${var.target_directory} private_key_str=${var.private_key_str} repo_url=${var.repo_url}"
     ]
   }
 

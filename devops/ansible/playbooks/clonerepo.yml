@@ -15,7 +15,7 @@
         aws_access_key: "{{ access_key }}" # take from env or using profile
         aws_secret_key: "{{ secret_key }}"
         bucket: musipedia-secretes
-        object: ".env"
+        object: .env
         mode: get
         dest: "{{ remote_env_path }}" #will download and store in /tmp with your provided filename
     

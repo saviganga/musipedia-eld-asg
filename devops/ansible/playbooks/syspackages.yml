@@ -15,15 +15,20 @@
         name: nodejs
         state: present
 
-    - name: Install npm
-      apt:
-        name: npm
-        state: present
-        
+    # - name: Install npm
+    #   apt:
+    #     name: npm
+    #     state: present
+
 
     - name: Install Python
       ansible.builtin.package:
         name: python3
+        state: present
+
+    - name: Install npm
+      apt:
+        name: npm
         state: present
 
     - name: Install pip

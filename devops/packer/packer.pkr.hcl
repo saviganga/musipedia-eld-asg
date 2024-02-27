@@ -19,8 +19,8 @@ packer {
 
 source "amazon-ebs" "example" {
   access_key    = var.access_key
-  secret_key    = var.secret_key
-  region        = var.region
+  secret_key    = var.SECRET_KEY
+  region        = var.REGION
   source_ami    = var.source_ami
   instance_type = var.instance_type
   ssh_username  = var.ssh_user

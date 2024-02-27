@@ -36,10 +36,10 @@
         name: boto3
         state: present
 
-    # - name: Install packaging.version Python module
-    #   pip:
-    #     name: packaging
-    #     state: present
+    - name: Install packaging.version Python module
+      pip:
+        name: packaging
+        state: present
 
 
     

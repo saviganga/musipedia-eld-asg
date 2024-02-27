@@ -7,6 +7,12 @@ packer {
       source  = "github.com/hashicorp/amazon"
     }
   }
+
+  required_provisioners {
+    ansible = {
+      source  = "github.com/hashicorp/ansible"
+    }
+  }
 }
 
 

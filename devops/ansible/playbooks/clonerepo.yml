@@ -17,7 +17,7 @@
         bucket: musipedia-secretes
         object: .env
         mode: get
-        dest: /home/ubuntu/app/web/.env #will download and store in /tmp with your provided filename
+        dest: /home/ubuntu/app/web/.env 
     
     # - name: Synchronize file from S3 bucket
     #   community.aws.s3_sync:

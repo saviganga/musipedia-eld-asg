@@ -3,7 +3,7 @@
         {
             "type": "amazon-ebs",
             "region": "us-east-1",
-            "source_ami": "ami-0c7217cdde317cfec",
+            "source_ami": "ami-0c7217cdde317cfec"
             
         }
     ],

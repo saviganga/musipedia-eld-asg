@@ -35,7 +35,6 @@ resource "aws_launch_template" "ec2-tpl" {
   user_data = filebase64("${path.module}/startapp.sh")
 }
 
-
 output "ami_output" {
   value = data.aws_ami.musipedia.name
 }

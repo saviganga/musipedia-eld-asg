@@ -1,5 +1,4 @@
 ---
-
 - hosts: default
 - name: Install Node.js and npm
   hosts: default

@@ -1,4 +1,5 @@
 ---
+
 - hosts: default
 - name: Install Node.js and npm
   hosts: default
@@ -33,7 +34,7 @@
       apt:
         name: nodejs
         state: present
-        
+
     - name: Install npm
       apt:
         name: npm

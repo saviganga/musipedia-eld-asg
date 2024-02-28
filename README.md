@@ -63,5 +63,8 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
 3. sit back, relax, and enjoy the power of automation
 
 
+## IMPROVE...
+1. find a way to deregister outdated AMIS from the AWS console
+
 ## REMEMBER TO RUN TERRAFORM DESTROY TO CLEAN UP
 - in the .github/workflows/cicd.yml file, replace the 'terraform apply' run command to with 'terraform destroy'

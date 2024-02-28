@@ -39,7 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: provision-packer
     env:
-      ## TF_VAR_awskey01: ${{ secrets.ssh_private_key }}
       AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
 

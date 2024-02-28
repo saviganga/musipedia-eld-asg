@@ -30,18 +30,38 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
 
 ## Directory Guide
 
-1. api/: this directory contains the node.js application
-2. devops/: this is where the magic happens
-    - ansible/:
-        - ansible.cfg: contains the ansible configurations to be used for this workflow
-        - env.example: sample file containing environment variable keys
-        - myinventory/: contains ansible inventory information for local development
-        - playbooks/:
-            - syspackages.yml: contains plays to install dependencies needed to configure the application on the EC2 instance
-            - clonerepo.yml: contains plays to clone the application code from github, and install dependencies
-            - startapp.yml: contains plays to start the node.js application
-    
-    - packer/: 
-        - packer
+1. **api/:** This directory contains the Node.js application.
+2. **devops/:** This is where the magic happens.
+    - **ansible/:**
+        - `ansible.cfg`: Contains the Ansible configurations for this workflow.
+        - `env.example`: Sample file containing environment variable keys.
+        - `myinventory/`: Contains Ansible inventory information for local development.
+        - `playbooks/`:
+            - `syspackages.yml`: Plays to install dependencies needed to configure the application on the EC2 instance.
+            - `clonerepo.yml`: Plays to clone the application code from GitHub and install application dependencies.
+            - `startapp.yml`: Plays to start the Node.js application.
+    - **packer/:** 
+        - `variables.pkr.hcl`: Contains variables for the Packer configuration.
+        - `packer.pkr.hcl`: Contains configurations to provision the golden AMI.
+    - **terraform/:**
+        - `providers.tf`: Declares the providers that Terraform will use, and defines the backend where Terraform will store the state of our infrastructure.
+        - `vars.tf`: Contains variables for the Terraform configuration.
+        - `key_pair.tf`: Contains Terraform configurations to provision a key pair for SSH access to EC2 instances.
+        - `security_group.tf`: Contains Terraform configurations to provision ingress and egress rules for the application infrastructure.
+        - `instance.tf`: Contains Terraform configurations to fetch the latest version of the golden AMI created by Packer and provision an EC2 launch template.
+        - `asg.tf`: Contains Terraform configurations to provision an auto scaling group and associated policies.
+        - `elb.tf`: Contains Terraform configurations to provision an Application Load Balancer, a target group, and a listener.
+        - `startapp.sh`: Shell script used by the EC2 launch template to start the Node.js application.
+    - **.github/workflows/:**
+        - `cicd.yml`: CI/CD file to handle provisioning of infrastructure (Packer and Terraform) on every push to our preferred branch.
 
 
+## STEPS
+
+1. make changes to your configurations (app or devops)
+2. push to your trigger branch
+3. sit back, relax, and enjoy the power of automation
+
+
+## REMEMBER TO RUN TERRAFORM DESTROY TO CLEAN UP
+- in the .github/workflows/cicd.yml file, replace the 'terraform apply' run command to with 'terraform destroy'

@@ -14,10 +14,10 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
 ## Bonus Challenge:
 
 1. **Golden AMI Creation:** Craft a custom image with your Node.js app preconfigured. Launch EC2 instances from this Golden AMI for swift and consistent deployment.
-2. **Streamlined Auto Scaling Group:** Configure Auto Scaling to launch instances from a predefined launch template using the Golden AMI. Reduce setup time and enhance scalability seamlessly.
+2. **Streamlined Auto Scaling Group:** Configure Auto Scaling to launch instances from a launch template using the Golden AMI. Reduce setup time and enhance scalability seamlessly.
 
 
-### Tech Stacks/Prerequisites:
+### Tech Stack/Prerequisites:
 
 - **Node.js:** To build the application.
 - **AWS:**
@@ -52,8 +52,8 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
         - `asg.tf`: Contains Terraform configurations to provision an auto scaling group and associated policies.
         - `elb.tf`: Contains Terraform configurations to provision an Application Load Balancer, a target group, and a listener.
         - `startapp.sh`: Shell script used by the EC2 launch template to start the Node.js application.
-    - **.github/workflows/:**
-        - `cicd.yml`: CI/CD file to handle provisioning of infrastructure (Packer and Terraform) on every push to our preferred branch.
+3. **.github/workflows/:**
+    - `cicd.yml`: CI/CD file to handle provisioning of infrastructure (Packer and Terraform) on every push to our preferred branch.
 
 
 ## STEPS

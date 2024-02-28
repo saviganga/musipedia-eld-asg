@@ -12,7 +12,7 @@ terraform {
   backend "s3" {
     bucket         = "rs-terraform-statefile01"
     key            = "terraform-statefile"
-    region         = var.REGION
+    region         = "us-east-1"
   }
 }
 

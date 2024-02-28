@@ -36,7 +36,7 @@ resource "aws_launch_template" "ec2-tpl" {
 }
 
 
-output "asg_output" {
+output "ami_output" {
   value = data.aws_ami.musipedia.name
 }
 

@@ -11,7 +11,7 @@ data "aws_ami" "musipedia" {
 }
 
 resource "aws_launch_template" "ec2-tpl" {
-  name = "ec2-tpl"
+  name = "${var.PROJECT_NAME}-ec2-tpl"
 
   image_id = data.aws_ami.musipedia.image_id
 

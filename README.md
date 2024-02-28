@@ -42,6 +42,6 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
             - startapp.yml: contains plays to start the node.js application
     
     - packer/: 
-        - 
+        - packer
 
 

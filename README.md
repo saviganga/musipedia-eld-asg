@@ -27,3 +27,21 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
 - **Packer:** Used to build our golden AMI.
 - **Ansible:** Used by Packer to configure the Node.js application on the golden AMI.
 - **Terraform:** Used to configure our infrastructure on AWS.
+
+## Directory Guide
+
+1. api/: this directory contains the node.js application
+2. devops/: this is where the magic happens
+    - ansible/:
+        - ansible.cfg: contains the ansible configurations to be used for this workflow
+        - env.example: sample file containing environment variable keys
+        - myinventory/: contains ansible inventory information for local development
+        - playbooks/:
+            - syspackages.yml: contains plays to install dependencies needed to configure the application on the EC2 instance
+            - clonerepo.yml: contains plays to clone the application code from github, and install dependencies
+            - startapp.yml: contains plays to start the node.js application
+    
+    - packer/: 
+        - 
+
+

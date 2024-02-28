@@ -15,3 +15,15 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
 
 1. **Golden AMI Creation:** Craft a custom image with your Node.js app preconfigured. Launch EC2 instances from this Golden AMI for swift and consistent deployment.
 2. **Streamlined Auto Scaling Group:** Configure Auto Scaling to launch instances from a predefined launch template using the Golden AMI. Reduce setup time and enhance scalability seamlessly.
+
+
+### Tech Stacks/Prerequisites:
+
+- **Node.js:** To build the application.
+- **AWS:**
+    - **EC2:** The application is deployed to EC2 instances on AWS.
+    - **Application Load Balancer:** To efficiently distribute incoming application traffic across multiple targets (EC2) for improved availability.
+    - **Auto Scaling Group:** Enables automatic scaling of compute resources in response to changes in demand or conditions.
+- **Packer:** Used to build our golden AMI.
+- **Ansible:** Used by Packer to configure the Node.js application on the golden AMI.
+- **Terraform:** Used to configure our infrastructure on AWS.

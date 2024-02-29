@@ -5,14 +5,14 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~>5.0.0"
+      # version = "~> 5.0"
     }
   }
 
   backend "s3" {
-    bucket         = "rs-terraform-statefile01"
-    key            = "terraform-statefile"
-    region         = var.REGION
+    bucket         = "tf-backend-ganga"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
   }
 }
 

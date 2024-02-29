@@ -9,6 +9,26 @@
       apt:
         update_cache: yes
 
+    - name: Install Python
+      ansible.builtin.package:
+        name: python3
+        state: present
+
+    - name: Install pip
+      ansible.builtin.package:
+        name: python3-pip
+        state: present
+
+    - name: Install boto3 library
+      ansible.builtin.pip:
+        name: boto3
+        state: present
+
+    - name: Install packaging.version Python module
+      pip:
+        name: packaging
+        state: present
+    
     - name: Install Node.js
       apt:
         name: nodejs
@@ -18,3 +38,9 @@
       apt:
         name: npm
         state: present
+
+
+    
+
+
+    

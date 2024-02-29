@@ -4,13 +4,20 @@ uploads/
 .env
 *scripts
 *public-keys
-*pub-keys
+*devops/ansible/pub-keys
+*devops/terraform/pub-keys/mb
+*devops/terraform/pub-keys/.ssh
+*devops/terraform/pub-keys/.ssh.pub
 *.ssh
 *.ssh.pub
+*mb
+*id_ansible
 
 ####################
 # packer
+*packer.json
 *variable.json
+*variable.pkr.json
 # Cache objects
 packer_cache/
 

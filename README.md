@@ -14,7 +14,7 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
 ## Bonus Challenge:
 
 1. **Golden AMI Creation:** Craft a custom image with your Node.js app preconfigured. Launch EC2 instances from this Golden AMI for swift and consistent deployment.
-2. **Streamlined Auto Scaling Group:** Configure Auto Scaling to launch instances from a launch template using the Golden AMI. Reduce setup time and enhance scalability seamlessly.
+2. **Streamlined Auto Scaling Group:** Configure Auto Scaling Group to launch instances from the launch template using the Golden AMI. This reduces setup time and enhances scalability seamlessly.
 
 
 ### Tech Stack/Prerequisites:

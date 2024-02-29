@@ -44,7 +44,7 @@ Welcome to part 3 of our ongoing DevOps Challenge Series where we navigate throu
         - `variables.pkr.hcl`: Contains variables for the Packer configuration.
         - `packer.pkr.hcl`: Contains configurations to provision the golden AMI.
     - **terraform/:**
-        - `providers.tf`: Declares the providers that Terraform will use, and defines the backend where Terraform will store the state of our infrastructure.
+        - `providers.tf`: Declares the providers that Terraform will use, and defines the backend (AWS S3) where Terraform will store the state of our infrastructure.
         - `vars.tf`: Contains variables for the Terraform configuration.
         - `key_pair.tf`: Contains Terraform configurations to provision a key pair for SSH access to EC2 instances.
         - `security_group.tf`: Contains Terraform configurations to provision ingress and egress rules for the application infrastructure.
